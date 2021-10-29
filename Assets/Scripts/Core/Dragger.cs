@@ -3,7 +3,7 @@ using MiniJam.Control;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-namespace MiniJam
+namespace MiniJam.Core
 {
     public class Dragger : MonoBehaviour
     {
