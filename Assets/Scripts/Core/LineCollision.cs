@@ -17,8 +17,8 @@ namespace MiniJam.Core
         }
 
 
-        private void LateUpdate() { 
-
+        private void LateUpdate() {
+            
             //Get all the positions from the line renderer
             Vector3[] positions = _lineController.GetPositions();
 
@@ -33,21 +33,23 @@ namespace MiniJam.Core
                 _polygonCollider2D.pathCount = numberOfLines;
 
                 //Get Collider points between two consecutive points
-                for (int i = 0; i < numberOfLines; i++) {
-                    //Get the two next points
-                    List<Vector2> currentPositions = new List<Vector2> {
-                        positions[i],
-                        positions[i+1],
-                    };
-
-                    List<Vector2> currentColliderPoints = CalculateColliderPoints(currentPositions);
-                    _polygonCollider2D.SetPath(i, currentColliderPoints.ConvertAll(p => (Vector2)transform.InverseTransformPoint(p)));
-                }
+                for (int i = 0; i < numberOfLines; i++) 
+                    GetTwoNextPoints(positions, i);
             }
-            else {
-
+            else
                 _polygonCollider2D.pathCount = 0;
-            }
+        }
+
+        private void GetTwoNextPoints(Vector3[] positions, int i)
+        {
+            List<Vector2> currentPositions = new List<Vector2>
+            {
+                positions[i],
+                positions[i + 1],
+            };
+
+            List<Vector2> currentColliderPoints = CalculateColliderPoints(currentPositions);
+            _polygonCollider2D.SetPath(i, currentColliderPoints.ConvertAll(p => (Vector2) transform.InverseTransformPoint(p)));
         }
 
         private void OnDrawGizmos()

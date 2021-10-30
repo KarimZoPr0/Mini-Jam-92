@@ -9,7 +9,8 @@ namespace MiniJam
     {
         [SerializeField] private GameObject prefab;
 
-        private int SpawnAmount;
+        private const int SpawnLimit = 3;
+        private int _spawnAmount;
 
         public void Spawn(Vector3 position)
         {
@@ -17,7 +18,7 @@ namespace MiniJam
         }
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Mouse1) && SpawnAmount <= 10)
+            if(Input.GetKeyDown(KeyCode.Mouse1) && _spawnAmount <= SpawnLimit)
             {
                 
                 Vector3 worldPoint =
@@ -27,7 +28,7 @@ namespace MiniJam
 
                 Spawn(adjust2);
 
-                SpawnAmount++;
+                _spawnAmount++;
             }
         }
     }
