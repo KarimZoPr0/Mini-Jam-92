@@ -11,6 +11,7 @@ namespace MiniJam.Core
         {
             transform.position = GetMousePos();
         }
+        
 
         Vector3 GetMousePos()
         {

@@ -58,6 +58,7 @@ namespace MiniJam.Core
         }
 
         private List<Vector2> CalculateColliderPoints(List<Vector2> positions) {
+            
             //Get The Width of the Line
             float width = _lineController.GetWidth();
 
