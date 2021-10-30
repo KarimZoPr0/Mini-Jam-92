@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
@@ -12,7 +13,7 @@ public class PlayerUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // Reference.ui.LoadScreen("OpenRight");
+       Reference.ui.LoadScreen("OpenRight");
     }
 
     // Update is called once per frame
@@ -43,6 +44,11 @@ public class PlayerUI : MonoBehaviour
     {
         settingsObj.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void LoadNextLevel(int level)
+    {
+        SceneManager.LoadScene(level);
     }
     public void ReloadScene()
     {

@@ -56,7 +56,7 @@ public class SceneTransitor : MonoBehaviour
     IEnumerator Transition()
     {
         Reference.ui.LoadScreen("Right");
-        yield return new WaitForSecondsRealtime(0.45f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(targetScene);
         Time.timeScale = 1;
     }

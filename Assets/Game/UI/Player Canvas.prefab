@@ -412,7 +412,7 @@ RectTransform:
   - {fileID: 2991011793277397969}
   m_Father: {fileID: 2928511986794429583}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -345}
@@ -541,11 +541,11 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 90736e51518f77d49badc60af848894c, type: 2}
-  - {fileID: 7400000, guid: 218fcc3256c55aa4db1af0c75fd00169, type: 2}
-  - {fileID: 7400000, guid: e7fbd3614d822f34f85b42250b36e274, type: 2}
-  - {fileID: 7400000, guid: ccf2f22eaf525da4cb755adea6729b56, type: 2}
+  - {fileID: 7400000, guid: 3c14c0671aad7cf4497488519a35ff7d, type: 2}
+  - {fileID: 7400000, guid: 73e970963da5e6a4bb88722a6d19526b, type: 2}
+  - {fileID: 7400000, guid: 35407c83ebeb1f84388a2fb09e0757f5, type: 2}
+  - {fileID: 7400000, guid: 19df2062c71526541860ec42f63ab10b, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0

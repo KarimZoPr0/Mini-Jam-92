@@ -15,14 +15,10 @@ namespace MiniJam.Core
         [SerializeField] private Cursor cursor;
 
         private bool _canDrag = true;
-
-        private bool isDragging = false;
         private void OnMouseDrag()
         {
             if(!_canDrag) return;
-            isDragging         = true;
             transform.position = GetMousePos();
-            
         }
 
         private void OnMouseUp() => Reference.ui.crosshair.ChangeCrosshair("Select");
