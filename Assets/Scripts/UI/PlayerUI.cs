@@ -12,7 +12,7 @@ public class PlayerUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Reference.ui.LoadScreen("OpenRight");
+       // Reference.ui.LoadScreen("OpenRight");
     }
 
     // Update is called once per frame

@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+namespace MiniJam.Control
 {
-
-    public void ShakeCamera(float strength = 0.1f, float duration = 0.1f)
-    {
-        transform.parent.DOShakePosition(duration, strength, 10, 90);
-    }
+	public class CameraController : MonoBehaviour
+	{
+		public static void ShakeCamera(float strength = 0.1f, float duration = 0.1f)
+		{
+			Camera.main.DOShakePosition(duration, strength, 10, 90);
+		}
+	}
 }
