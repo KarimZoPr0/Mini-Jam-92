@@ -22,10 +22,10 @@ public class SceneInitializer : MonoBehaviour
         PlayerUI ui = Instantiate(playerUIPrefab, transform.position, Quaternion.identity).GetComponent<PlayerUI>();
         Reference.ui = ui;
         //
-        // if (AudioManager.instance == null)
-        // {
-        //     Instantiate(audioManagerPrefab, transform.position, Quaternion.identity);
-        // }
+         if (AudioManager1.instance == null)
+         {
+             Instantiate(audioManagerPrefab, transform.position, Quaternion.identity);
+         }
     }
 
 }

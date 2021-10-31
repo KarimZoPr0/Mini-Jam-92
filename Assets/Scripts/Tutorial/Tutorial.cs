@@ -9,31 +9,34 @@ namespace MiniJam
 {
     public class Tutorial : MonoBehaviour
     {
-        public int     currentScene;
-        public int     sceneToLoad;
-        public Dragger dragger;
-        public Spawner spawner;
+        public int        currentScene;
+        public int        sceneToLoad;
+        public Dragger    dragger;
+        public Spawner    spawner;
 
         [SerializeField] private int spawnTutLimit = 3;
-        [SerializeField] private int dragTutLimit = 3;
-        
-        
+        [SerializeField] private int dragTutLimit  = 1;
+
         private void Start()
         {
-	        
-	        spawner.spawnLimit = spawnTutLimit;
+	        if (spawner != null)
+	        {
+		        spawner.spawnLimit = spawnTutLimit;
+		        spawner.UpdateText();
+	        }
 
 	        if (dragger != null)
-	        {
+	        { 
 		        dragger.dragLimit = dragTutLimit;
+		        dragger.UpdateText();
 	        }
-	       
         }
 
         private void Update()
         {
 	        if(currentScene == 1)
 	        {
+		        if (spawner == null) return;
 		        if(spawner.spawnClickCount == spawnTutLimit)
 			        Invoke(nameof(LoadLevel), 1.5f);
 	        }
@@ -43,7 +46,6 @@ namespace MiniJam
 		        if(dragger.dragCount == dragTutLimit) 
 			        Invoke(nameof(LoadLevel), 1.5f);
 	        }
-
         }
 
         private void LoadLevel()

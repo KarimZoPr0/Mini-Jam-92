@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951f050993e9357498c83af9dba6f630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerUIPrefab: {fileID: 5865180939598624571, guid: 77f44376f41083e429a5007781a10098, type: 3}
-  audioManagerPrefab: {fileID: 0}
+  playerUIPrefab: {fileID: 3956996742977056997, guid: 77f44376f41083e429a5007781a10098, type: 3}
+  audioManagerPrefab: {fileID: 3871094352858167529, guid: 113ba2ac072225744a282953a86d111d, type: 3}

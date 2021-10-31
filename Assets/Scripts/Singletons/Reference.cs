@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Reference : MonoBehaviour
 {
-    public static SceneTransitor transitor;
-    public static PlayerUI ui;
+    public static SceneTransitor   transitor;
+    public static PlayerUI         ui;
     public static CameraController cam;
+    public static AudioManager1     audio;
 }

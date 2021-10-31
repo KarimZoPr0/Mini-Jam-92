@@ -27,6 +27,11 @@ namespace MiniJam.Core
 
         private void Start()
         {
+            UpdateText();
+        }
+
+        public void UpdateText()
+        {
             dragAmountTxt.text = dragLimit.ToString();
         }
 

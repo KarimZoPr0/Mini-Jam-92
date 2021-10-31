@@ -16,10 +16,15 @@ namespace MiniJam.Core
         public bool isTutorial = false;
         private void Start()
         {
-            if(healthAmount != null) 
+            UpdateText();
+        }
+
+        public void UpdateText()
+        {
+            if (healthAmount != null)
                 healthAmount.text = spawnLimit.ToString();
         }
-        
+
         public void Spawn(Vector3 position) => Instantiate(prefab).transform.position = position;
 
         private void Update()
@@ -38,15 +43,15 @@ namespace MiniJam.Core
                 spawnClickCount++;
                 soundsManager.Play("WaterImpact");
 
-                if(healthAmount == null || spawnLimit <= 0) return;
+                // int 1 is to make sure he doesn't die
                 healthAmount.text = (spawnLimit - spawnClickCount).ToString();
+                if(healthAmount == null || (spawnLimit - spawnClickCount) <= 1) return;
+              
                 
                 if (isTutorial) return; 
                 
                 if(spawnLimit - spawnClickCount <= 0) 
                     Reference.transitor.ReloadScene();
-                
-               
 
             }
         }

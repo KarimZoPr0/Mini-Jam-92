@@ -62,7 +62,7 @@ public class SceneTransitor : MonoBehaviour
     }
     IEnumerator fade()
     {
-        Reference.ui.LoadScreen("OpenRight");
+        Reference.ui.LoadScreen("Right");
         yield return new WaitForSecondsRealtime(0.45f);
         Time.timeScale = 1;
     }

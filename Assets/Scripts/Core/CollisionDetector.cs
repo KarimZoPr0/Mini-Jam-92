@@ -15,35 +15,35 @@ namespace MiniJam.Core
         [SerializeField] private GameObject    postProcessing;
         [SerializeField] private int           level;
 
-        private bool isAlive = true;
+        public bool isAlive = true;
+
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            if (!isAlive) return;
             if (other.gameObject.CompareTag("Liquid"))
             {
-                Reference.transitor.LoadScene(level);
-                GetComponent<SpriteRenderer>().sprite = _sprite;
+                StartCoroutine(Die());
 
-                if (isAlive)
-                    sounds.Play("Hit");
-                Invoke(nameof(Die), .6f);
             }
         }
 
-        private void Die()
+        IEnumerator Die()
         {
-            isAlive = false;
-            CameraController.ShakeCamera(0.15f, 1f);
+            isAlive                               = false;
+            GetComponent<SpriteRenderer>().sprite = _sprite;
+            
             postProcessing.SetActive(true);
             sounds.Play("Die");
+            CameraController.ShakeCamera(0.5f, .25f);
+            Debug.Log("Loadscene");
+            yield return new WaitForSeconds(0.6f);
+            Reference.transitor.Fade();
+            yield return new WaitForSeconds(0.5f);
+            SceneManager.LoadScene(level);
 
-            Invoke(nameof(LoadLevel), 1.4f);
         }
-
-        private void LoadLevel()
-        {
-            Reference.transitor.LoadScene(level);
-        }
+        
     }
 
 }
