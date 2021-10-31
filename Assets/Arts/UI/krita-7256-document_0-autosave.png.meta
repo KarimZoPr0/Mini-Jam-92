@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 1efa21b07226c5d4eae3e1a334a6f99a
+guid: 710c1f272e1c1744d918ec35416e4e87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7443756053782179069
-    second: background_0
-  - first:
-      213: -3192133289119773823
-    second: background_1
-  - first:
-      213: 3970015981214305365
-    second: background_2
-  - first:
-      213: 1405897620634370583
-    second: background_3
+      213: -5776080359165942693
+    second: krita-7256-document_0-autosave_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -77,24 +68,24 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -103,13 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_0
+      name: krita-7256-document_0-autosave_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 614
-        width: 640
-        height: 355
+        x: 99
+        y: 178
+        width: 451
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,20 +108,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30356abce4772b890800000000000000
-      internalID: -7443756053782179069
+      spriteID: 3d75b707d22abda80800000000000000
+      internalID: -8440974760531503149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: background_1
+      name: krita-7256-document_0-autosave_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 486
-        width: 640
-        height: 86
+        x: 275
+        y: 143
+        width: 101
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,50 +129,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18b015aafa343b3d0800000000000000
-      internalID: -3192133289119773823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 284
-        width: 640
-        height: 162
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55c07e83084581730800000000000000
-      internalID: 3970015981214305365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 640
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7128a7cef60c28310800000000000000
-      internalID: 1405897620634370583
+      spriteID: b54adcd248d37dfa0800000000000000
+      internalID: -5776080359165942693
       vertices: []
       indices: 
       edges: []

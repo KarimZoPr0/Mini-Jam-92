@@ -19,6 +19,10 @@ public class PlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.R))
+            ReloadScene();
+        
+        
         if (Input.GetButtonDown("Cancel"))
         {
             settingsObj.SetActive(!settingsObj.activeSelf);
@@ -45,11 +49,7 @@ public class PlayerUI : MonoBehaviour
         settingsObj.SetActive(false);
         Time.timeScale = 1;
     }
-
-    public void LoadNextLevel(int level)
-    {
-        SceneManager.LoadScene(level);
-    }
+    
     public void ReloadScene()
     {
         Time.timeScale = 1;
@@ -59,4 +59,5 @@ public class PlayerUI : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+    
 }

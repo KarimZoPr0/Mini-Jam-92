@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,21 +10,18 @@ public class MenuButtons : MonoBehaviour
     public int levelsScene = 1;
     public int aboutScene = 2;
 
-    public void LoadMenu()
+    private void Update()
     {
-        Reference.transitor.LoadScene(menuScene);
+        if (Input.anyKeyDown && !(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)))
+        {
+            LoadLevels();
+        }
+   
     }
+
     public void LoadLevels()
     {
         print("load");
         Reference.transitor.LoadScene(levelsScene);
-    }
-    public void LoadAbout()
-    {
-        Reference.transitor.LoadScene(aboutScene);
-    }
-    public void Quit()
-    {
-        Application.Quit();
     }
 }

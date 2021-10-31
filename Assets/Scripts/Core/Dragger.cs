@@ -3,6 +3,7 @@ using MiniJam.Control;
 using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Tilemaps;
 
 namespace MiniJam.Core
 {
@@ -13,32 +14,35 @@ namespace MiniJam.Core
     }
     public class Dragger : MonoBehaviour
     {
-        [SerializeField] private Cursor        cursor;
-        [SerializeField] private SoundsManager sounds;
-        [SerializeField] private int           dragMax = 2;
-        [SerializeField] private int           dragCount;
-
+        [SerializeField] private Cursor          cursor;
+        [SerializeField] private SoundsManager   sounds;
+        public  int             dragLimit = 2;
         [SerializeField] private TextMeshProUGUI dragAmountTxt;
-
+        [SerializeField] private Tilemap         tilemap;
+        
+        private Vector3 lastPos;
+        private Vector3 currentPos;
+        public  int     dragCount;
+        
 
         private void Start()
         {
-            dragAmountTxt.text = dragMax.ToString();
+            dragAmountTxt.text = dragLimit.ToString();
         }
 
         private void OnMouseDrag()
         {
-            if (dragCount >= dragMax) return;
+            if (dragCount >= dragLimit) return;
 
             transform.position = GetMousePos();
         }
 
         private void OnMouseUp()
         {
-            if(dragCount >= dragMax) return;
+            if(dragCount >= dragLimit) return;
             
             dragCount++;
-            dragAmountTxt.text = (dragMax - dragCount).ToString();
+            dragAmountTxt.text = (dragLimit - dragCount).ToString();
 
             Reference.ui.crosshair.ChangeCrosshair("Select");
             sounds.Play("WaterImpact");
@@ -47,14 +51,14 @@ namespace MiniJam.Core
 
         private void OnMouseDown()
         {
-            if(dragCount > dragMax) return;
+            if(dragCount >= dragLimit) return;
             Reference.ui.crosshair.ChangeCrosshair("Drag");
            // sounds.Play("MouseDown");
         }
 
         private void OnMouseEnter()
         {
-            if (dragCount >= dragMax)
+            if (dragCount >= dragLimit)
             {
                 cursor = Cursor.Illegal;
             }
@@ -74,6 +78,5 @@ namespace MiniJam.Core
             mousePos.z = 0;
             return mousePos;
         }
-        
     }
 }
