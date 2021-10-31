@@ -1,6 +1,7 @@
 using System;
 using MiniJam.Control;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.Tilemaps;
@@ -21,7 +22,6 @@ namespace MiniJam.Core
         [SerializeField] private Tilemap         tilemap;
         
         private Vector3 lastPos;
-        private Vector3 currentPos;
         public  int     dragCount;
         
 
@@ -29,7 +29,6 @@ namespace MiniJam.Core
         {
             UpdateText();
         }
-
         public void UpdateText()
         {
             dragAmountTxt.text = dragLimit.ToString();

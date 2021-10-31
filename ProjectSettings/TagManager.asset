@@ -7,6 +7,7 @@ TagManager:
   - Liquid
   - Audio_Manager
   - Tile
+  - SpawnZone
   layers:
   - Default
   - TransparentFX

@@ -904,7 +904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399288719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.830997, y: 1.2726026, z: -5.2373314}
+  m_LocalPosition: {x: -3.830997, y: 1.2726026, z: 10}
   m_LocalScale: {x: 0.15110143, y: 0.15110143, z: 0.15110143}
   m_Children:
   - {fileID: 1446710467}
@@ -2189,6 +2189,7 @@ MonoBehaviour:
   healthAmount: {fileID: 214713096}
   soundsManager: {fileID: 885560788}
   postProcessing: {fileID: 1791116428}
+  spawnZone: {fileID: 0}
   spawnClickCount: 0
   isTutorial: 0
 --- !u!1 &1656540906
@@ -4388,7 +4389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1791116429
 MonoBehaviour:
   m_ObjectHideFlags: 0

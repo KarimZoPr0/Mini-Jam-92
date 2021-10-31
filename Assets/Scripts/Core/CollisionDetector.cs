@@ -36,12 +36,8 @@ namespace MiniJam.Core
             postProcessing.SetActive(true);
             sounds.Play("Die");
             CameraController.ShakeCamera(0.5f, .25f);
-            Debug.Log("Loadscene");
             yield return new WaitForSeconds(0.6f);
-            Reference.transitor.Fade();
-            yield return new WaitForSeconds(0.5f);
-            SceneManager.LoadScene(level);
-
+            Reference.transitor.LoadScene(level);
         }
         
     }
