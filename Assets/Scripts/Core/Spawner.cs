@@ -9,8 +9,9 @@ namespace MiniJam.Core
         [SerializeField] private GameObject      prefab;
         private const            int             SpawnLimit = 3;
         private                  int             _spawnAmount;
-        [SerializeField] private TextMeshProUGUI healthAmount;
         
+        [SerializeField] private TextMeshProUGUI healthAmount;
+        [SerializeField] private SoundsManager   soundsManager;
         private void Start()
         {
             healthAmount.text = SpawnLimit.ToString();
@@ -29,10 +30,14 @@ namespace MiniJam.Core
                 Vector3 adjust2 = new Vector3(worldPoint.x, worldPoint.y, prefab.transform.position.z);
 
                 Spawn(adjust2);
-                CameraController.ShakeCamera(0.15f, 0.15f);
+                CameraController.ShakeCamera(0.5f, 0.25f);
 
 
                 _spawnAmount++;
+                soundsManager.Play("WaterImpact");
+                if(SpawnLimit - _spawnAmount <= 0) 
+                    Reference.transitor.ReloadScene();
+                
                 healthAmount.text = (SpawnLimit - _spawnAmount).ToString();
 
             }

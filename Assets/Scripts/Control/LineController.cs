@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace MiniJam.Core
@@ -9,7 +10,18 @@ namespace MiniJam.Core
 		private                  LineRenderer    lineRenderer;
 		[SerializeField] private List<Transform> nodes;
 		private                  Vector3[]       positionsOfPoints;
+
+		public GameObject dotParent;
 		private void Awake() => lineRenderer = GetComponent<LineRenderer>();
+
+		private void Start()
+		{
+			for (int i = 0; i < dotParent.transform.childCount; i++)
+			{
+				nodes.Add(dotParent.transform.GetChild(i));
+			}
+			
+		}
 
 		private void Update()
 		{

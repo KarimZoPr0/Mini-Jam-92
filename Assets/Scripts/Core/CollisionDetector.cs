@@ -10,12 +10,31 @@ namespace MiniJam.Core
     {
         [SerializeField] private int level;
 
+        [SerializeField] private Sprite _sprite;
+
+        [SerializeField] private SoundsManager sounds;
+
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Liquid"))
             {
-                Reference.transitor.LoadScene(level);
+                GetComponent<SpriteRenderer>().sprite = _sprite;
+                sounds.Play("Hit");
+                Invoke(nameof(Die), 1.5f);
             }
+        }
+
+        private void Die()
+        {
+            sounds.Play("Die");
+            Reference.transitor.LoadScene(level);
+        }
+
+        public async void GoblinSound()
+        {
+            sounds.Play("Hit");
+            sounds.Play("Die");
+            Reference.transitor.LoadScene(level);
         }
     }
 }

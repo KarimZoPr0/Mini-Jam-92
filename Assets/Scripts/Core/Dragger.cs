@@ -1,5 +1,6 @@
 using System;
 using MiniJam.Control;
+using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -12,29 +13,58 @@ namespace MiniJam.Core
     }
     public class Dragger : MonoBehaviour
     {
-        [SerializeField] private Cursor cursor;
+        [SerializeField] private Cursor        cursor;
+        [SerializeField] private SoundsManager sounds;
+        [SerializeField] private int           dragMax = 2;
+        [SerializeField] private int           dragCount;
 
-        private bool _canDrag = true;
+        [SerializeField] private TextMeshProUGUI dragAmountTxt;
+
+
+        private void Start()
+        {
+            dragAmountTxt.text = dragMax.ToString();
+        }
+
         private void OnMouseDrag()
         {
-            if(!_canDrag) return;
+            if (dragCount >= dragMax) return;
+
             transform.position = GetMousePos();
         }
 
-        private void OnMouseUp() => Reference.ui.crosshair.ChangeCrosshair("Select");
+        private void OnMouseUp()
+        {
+            if(dragCount >= dragMax) return;
+            
+            dragCount++;
+            dragAmountTxt.text = (dragMax - dragCount).ToString();
 
-        private void OnMouseDown() => Reference.ui.crosshair.ChangeCrosshair("Drag");
+            Reference.ui.crosshair.ChangeCrosshair("Select");
+            sounds.Play("WaterImpact");
+            //sounds.Play("MouseUp");
+        }
+
+        private void OnMouseDown()
+        {
+            if(dragCount > dragMax) return;
+            Reference.ui.crosshair.ChangeCrosshair("Drag");
+           // sounds.Play("MouseDown");
+        }
 
         private void OnMouseEnter()
         {
-            if (cursor == Cursor.Drag) return;
+            if (dragCount >= dragMax)
+            {
+                cursor = Cursor.Illegal;
+            }
             var crossHair = cursor == Cursor.Illegal ? "Illegal" : "Select";
+
             Reference.ui.crosshair.ChangeCrosshair(crossHair);
         }
 
         private void OnMouseExit()
         {
-            if (cursor == Cursor.Drag) return;
             Reference.ui.crosshair.ChangeCrosshair("Select");
         }
 

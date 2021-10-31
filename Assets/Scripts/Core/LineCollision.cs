@@ -62,19 +62,19 @@ namespace MiniJam.Core
         private List<Vector2> CalculateColliderPoints(List<Vector2> positions) {
             
             //Get The Width of the Line
-            float width = _lineController.GetWidth();
+            var width = _lineController.GetWidth();
 
             // m = (y2 - y1) / (x2 - x1)
-            float m      = (positions[1].y - positions[0].y) / (positions[1].x - positions[0].x);
-            float deltaX = (width / 2f) * (m / Mathf.Pow(m * m + 1, 0.5f));
-            float deltaY = (width / 2f) * (1 / Mathf.Pow(1 + m * m, 0.5f));
+            var m      = (positions[1].y - positions[0].y) / (positions[1].x - positions[0].x);
+            var deltaX = (width / 2f) * (m / Mathf.Pow(m * m + 1, 0.5f));
+            var deltaY = (width / 2f) * (1 / Mathf.Pow(1 + m * m, 0.5f));
 
             //Calculate Vertex Offset from Line Point
-            Vector2[] offsets = new Vector2[2];
+            var offsets = new Vector2[2];
             offsets[0] = new Vector2(-deltaX, deltaY);
             offsets[1] = new Vector2(deltaX, -deltaY);
 
-            List<Vector2> colliderPoints = new List<Vector2> {
+            var colliderPoints = new List<Vector2> {
                 positions[0] + offsets[0],
                 positions[1] + offsets[0],
                 positions[1] + offsets[1],
