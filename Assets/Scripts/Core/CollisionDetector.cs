@@ -12,7 +12,8 @@ namespace MiniJam.Core
     {
         [SerializeField] private Sprite        _sprite;
         [SerializeField] private SoundsManager sounds;
-        [SerializeField] private GameObject    postProcessing;
+        [SerializeField] private GameObject    defaultPostProcessing;
+        [SerializeField] private GameObject    deathPostProcessing;
         [SerializeField] private int           level;
 
         public bool isAlive = true;
@@ -33,11 +34,16 @@ namespace MiniJam.Core
             isAlive                               = false;
             GetComponent<SpriteRenderer>().sprite = _sprite;
             
-            postProcessing.SetActive(true);
+            defaultPostProcessing.SetActive(false);
+            deathPostProcessing.SetActive(true);
             sounds.Play("Die");
             CameraController.ShakeCamera(0.5f, .25f);
+            Debug.Log("Loadscene");
             yield return new WaitForSeconds(0.6f);
-            Reference.transitor.LoadScene(level);
+            Reference.transitor.Fade();
+            yield return new WaitForSeconds(0.5f);
+            SceneManager.LoadScene(level);
+
         }
         
     }

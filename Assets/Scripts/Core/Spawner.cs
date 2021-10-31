@@ -11,7 +11,6 @@ namespace MiniJam.Core
         public                   int             spawnLimit = 3;
         [SerializeField] private TextMeshProUGUI healthAmount;
         [SerializeField] private SoundsManager   soundsManager;
-        [SerializeField] private GameObject      postProcessing;
         [SerializeField] private SpawnZone       spawnZone;
         
         [HideInInspector] public int  spawnClickCount; 
