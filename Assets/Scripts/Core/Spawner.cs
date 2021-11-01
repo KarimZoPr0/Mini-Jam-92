@@ -30,6 +30,7 @@ namespace MiniJam.Core
 
         private void Update()
         {
+            if (spawnZone == null) return;
             var canSpawn = spawnClickCount < spawnLimit && spawnZone.inRange;
             
             if(Input.GetKeyDown(KeyCode.Mouse1) && canSpawn)
@@ -47,12 +48,16 @@ namespace MiniJam.Core
                 soundsManager.Play("WaterImpact");
 
                 // int 1 is to make sure he doesn't die
-                healthAmount.text = (spawnLimit - spawnClickCount).ToString();
-                if(healthAmount == null || (spawnLimit - spawnClickCount) <= 1) return;
-                
+                if(!isTutorial) 
+                    healthAmount.text = (spawnLimit - spawnClickCount).ToString();
                 
                 if(spawnLimit - spawnClickCount <= 0) 
                     Reference.transitor.ReloadScene();
+                
+                if(healthAmount == null || (spawnLimit - spawnClickCount) <= 1) return;
+                
+                
+              
 
             }
         }

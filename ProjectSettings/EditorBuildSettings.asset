@@ -15,8 +15,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial/Drag Dots.unity
     guid: 857499efc242c7a49ab101f78c3db6b7
   - enabled: 1
+    path: Assets/Scenes/Tutorial/Characters.unity
+    guid: 4cd42f7984720e840adab31e6baa8178
+  - enabled: 1
+    path: Assets/Scenes/Levels/Game 0.unity
+    guid: b5ad43082bd7def4eba3c715554bd051
+  - enabled: 1
     path: Assets/Scenes/Levels/Game 1.unity
     guid: 4032e4dbc45131143bcef58135c887c2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Game 2.unity
+    guid: 9b86ec1c5cbd5004bb54b0c0a6c92857
+  - enabled: 1
+    path: Assets/Scenes/Levels/Game 3.unity
+    guid: 10873003d1b7ec046b8963ce3aafb6aa
+  - enabled: 1
+    path: Assets/Scenes/Levels/Game 4.unity
+    guid: 8301257f9f3d9c5459109e8da34701db
   - enabled: 1
     path: Assets/Scenes/Tutorial/FinishScene.unity
     guid: 1d0eeb6ea9f4ca549a2516f0547fae03

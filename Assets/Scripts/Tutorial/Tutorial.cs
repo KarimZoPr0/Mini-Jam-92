@@ -37,7 +37,7 @@ namespace MiniJam
 	        if(currentScene == 1)
 	        {
 		        if (spawner == null) return;
-		        if(spawner.spawnClickCount == spawnTutLimit)
+		        if(spawner.spawnClickCount == spawnTutLimit -1)
 			        Invoke(nameof(LoadLevel), 1.5f);
 	        }
 	        if(currentScene == 2)
@@ -45,6 +45,11 @@ namespace MiniJam
 		        if (dragger == null) return;
 		        if(dragger.dragCount == dragTutLimit) 
 			        Invoke(nameof(LoadLevel), 1.5f);
+	        }
+
+	        if (currentScene == 3)
+	        {
+		        Invoke(nameof(LoadLevel), 4f);
 	        }
         }
 

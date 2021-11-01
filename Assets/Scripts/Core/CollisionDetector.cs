@@ -16,14 +16,17 @@ namespace MiniJam.Core
         [SerializeField] private GameObject    deathPostProcessing;
         [SerializeField] private int           level;
 
-        public bool isAlive = true;
+        public CharacterManager cm;
 
+        public bool isAlive = true;
+        public int  totalAlive;
 
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (!isAlive) return;
             if (other.gameObject.CompareTag("Liquid"))
             {
+                sounds.Play("Die");
                 StartCoroutine(Die());
 
             }
@@ -31,19 +34,19 @@ namespace MiniJam.Core
 
         IEnumerator Die()
         {
-            isAlive                               = false;
-            GetComponent<SpriteRenderer>().sprite = _sprite;
+            cm.deadCharacters++;
+            isAlive                               =  false;
+            GetComponent<SpriteRenderer>().sprite =  _sprite;
             
+            CameraController.ShakeCamera(0.5f, .25f);
+
+            if (totalAlive - cm.deadCharacters != 0) yield break;
             defaultPostProcessing.SetActive(false);
             deathPostProcessing.SetActive(true);
-            sounds.Play("Die");
-            CameraController.ShakeCamera(0.5f, .25f);
-            Debug.Log("Loadscene");
             yield return new WaitForSeconds(0.6f);
             Reference.transitor.Fade();
             yield return new WaitForSeconds(0.5f);
             SceneManager.LoadScene(level);
-
         }
         
     }

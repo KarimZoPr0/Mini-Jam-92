@@ -47,7 +47,7 @@ MonoBehaviour:
   sounds:
   - name: Dub
     clip: {fileID: 8300000, guid: 998122a2e6588164fb0e766f97bb40b9, type: 3}
-    volume: 0.75
+    volume: 0.45
     pitch: 1
     loop: 1
     playOnAwake: 1

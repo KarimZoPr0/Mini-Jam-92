@@ -19,7 +19,6 @@ namespace MiniJam.Core
         [SerializeField] private SoundsManager   sounds;
         public  int             dragLimit = 2;
         [SerializeField] private TextMeshProUGUI dragAmountTxt;
-        [SerializeField] private Tilemap         tilemap;
         
         private Vector3 lastPos;
         public  int     dragCount;
@@ -49,7 +48,7 @@ namespace MiniJam.Core
             dragAmountTxt.text = (dragLimit - dragCount).ToString();
 
             Reference.ui.crosshair.ChangeCrosshair("Select");
-            sounds.Play("WaterImpact");
+            sounds.Play("Drop");
             //sounds.Play("MouseUp");
         }
 
@@ -57,6 +56,7 @@ namespace MiniJam.Core
         {
             if(dragCount >= dragLimit) return;
             Reference.ui.crosshair.ChangeCrosshair("Drag");
+            sounds.Play("Click");
            // sounds.Play("MouseDown");
         }
 

@@ -162,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 3851290015631563259}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.04, y: -5.13, z: 5.4827714}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 7.0986, y: 7.0986, z: 7.0986}
   m_Children:
   - {fileID: 3851290016214447279}
   m_Father: {fileID: 0}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: 0
-  sounds: {fileID: 0}
+  sounds: {fileID: 2145575813899450176, guid: 419549b348bba494785ce1460d21980c, type: 3}
   dragLimit: 2
   dragAmountTxt: {fileID: 3851290014970397446}
   tilemap: {fileID: 0}
